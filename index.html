@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendSmart | Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN PAGE -->
+    <section id="login-section" class="container">
+        <div class="card">
+            <h1>SpendSmart</h1>
+            <p>Student Expense Tracker</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter any username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter any password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- MAIN APP DASHBOARD (Hidden by default) -->
+    <section id="app-section" class="container hidden">
+        <div class="card app-card">
+            <header class="app-header">
+                <h2>Welcome, <span id="user-display">Student</span>!</h2>
+                <button id="logout-btn" class="btn-text">Logout</button>
+            </header>
+
+            <div class="balance-board">
+                <h3>Total Spent</h3>
+                <h1 id="total-amount">$0.00</h1>
+            </div>
+
+            <form id="expense-form">
+                <div class="input-group">
+                    <input type="text" id="expense-name" placeholder="E.g., Campus Coffee" required>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="expense-cost" placeholder="Amount (e.g., 5.00)" step="0.01" required>
+                </div>
+                <button type="submit" class="btn btn-add">Add Expense</button>
+            </form>
+
+            <div class="expense-list-container">
+                <h3>Recent Expenses</h3>
+                <ul id="expense-list">
+                    <!-- Expenses will be injected here by JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

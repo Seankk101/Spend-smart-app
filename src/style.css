@@ -1,0 +1,264 @@
+/* Base Styles & Variables */
+:root {
+    --primary-color: #4F46E5;
+    --primary-hover: #4338CA;
+    --bg-color: #F3F4F6;
+    --card-bg: #FFFFFF;
+    --text-main: #1F2937;
+    --text-muted: #6B7280;
+    --danger: #EF4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    min-height: auto;
+}
+
+/* Card UI */
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.card p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+/* Forms & Inputs */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #FFFFFF;
+    color: var(--text-main);
+}
+
+.input-group input::placeholder {
+    color: #9CA3AF;
+    opacity: 1;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-add {
+    margin-top: 10px;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-small {
+    width: 100%;
+    padding: 8px;
+    background-color: #E5E7EB;
+    color: var(--text-main);
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-small:hover {
+    background-color: #D1D5DB;
+}
+
+/* App Dashboard Specifics */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.app-header h2 {
+    font-size: 1.2rem;
+}
+
+.balance-board {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.balance-board h1 {
+    font-size: 2.5rem;
+    margin-top: 10px;
+    color: var(--text-main);
+}
+
+.expense-list-container {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.expense-list-container h3 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 5px;
+}
+
+#expense-list {
+    list-style: none;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.delete-btn {
+    background: var(--danger);
+    color: white;
+    border: none;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+/* Export/Import Section */
+.export-import-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    flex: 1;
+    padding: 10px;
+    background-color: #10B981;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #059669;
+}
+
+/* OTP Verification Section */
+.otp-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #F0F9FF;
+    border-radius: 8px;
+    border-left: 4px solid #0EA5E9;
+}
+
+.otp-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.confirmation-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+#otp-input {
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+#verify-otp-btn {
+    margin-bottom: 10px;
+}
+
+#resend-otp-btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#back-to-login-btn {
+    width: 100%;
+    padding: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}

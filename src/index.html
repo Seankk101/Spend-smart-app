@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';">
+    <title>SpendSmart | Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN PAGE -->
+    <section id="login-section" class="container">
+        <div class="card">
+            <h1>SpendSmart</h1>
+            <p>Student Expense Tracker</p>
+            
+            <!-- Login Form -->
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="phone" placeholder="Enter phone (e.g., +1234567890)" required>
+                </div>
+                <button type="submit" class="btn">Send Verification Code</button>
+            </form>
+            
+            <!-- OTP Verification Section (Hidden by default) -->
+            <div id="otp-section" class="otp-section hidden">
+                <h3>Verify Your Phone</h3>
+                <p id="phone-confirm" class="confirmation-text"></p>
+                <div class="input-group">
+                    <input type="text" id="otp-input" placeholder="Enter 6-digit code" maxlength="6" required>
+                </div>
+                <button type="button" id="verify-otp-btn" class="btn">Verify Code</button>
+                <button type="button" id="resend-otp-btn" class="btn-secondary">Resend Code</button>
+                <button type="button" id="back-to-login-btn" class="btn-text">Back to Login</button>
+            </div>
+            
+            <button id="clear-data-btn" class="btn-small">Reset Data</button>
+        </div>
+    </section>
+
+    <!-- MAIN APP DASHBOARD (Hidden by default) -->
+    <section id="app-section" class="container hidden">
+        <div class="card app-card">
+            <header class="app-header">
+                <h2>Welcome, <span id="user-display">Student</span>!</h2>
+                <button id="logout-btn" class="btn-text">Logout</button>
+            </header>
+
+            <div class="balance-board">
+                <h3>Total Spent</h3>
+                <h1 id="total-amount">$0.00</h1>
+            </div>
+
+            <form id="expense-form">
+                <div class="input-group">
+                    <input type="text" id="expense-name" placeholder="E.g., Campus Coffee" required>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="expense-cost" placeholder="Amount (e.g., 5.00)" step="0.01" required>
+                </div>
+                <button type="submit" class="btn btn-add">Add Expense</button>
+            </form>
+
+            <div class="expense-list-container">
+                <h3>Recent Expenses</h3>
+                <ul id="expense-list">
+                    <!-- Expenses will be injected here by JavaScript -->
+                </ul>
+            </div>
+
+            <div class="export-import-section">
+                <button id="export-btn" class="btn-secondary">📥 Export Data</button>
+                <button id="import-btn" class="btn-secondary">📤 Import Data</button>
+                <input type="file" id="import-file" accept=".json" style="display: none;">
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
